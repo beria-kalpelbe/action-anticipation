@@ -37,7 +37,7 @@ def train_epoch(
     return total_loss / max(total_examples, 1)
 
 
-@torch.inference_mode()
+@torch.no_grad()
 def evaluate(
     model: nn.Module,
     batches: Iterable[dict[str, Tensor]],

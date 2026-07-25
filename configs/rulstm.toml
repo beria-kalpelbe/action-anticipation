@@ -15,7 +15,7 @@ fps = 30
 label = "action"
 frame_template = "frame_{:010d}.jpg"
 lmdb_readahead = false
-subset_size = 100  # Fixed part of dataset to select, empty string defaults to full dataset
+subset_size = 1000  # Fixed part of dataset to select, empty string defaults to full dataset
 
 [training]
 epochs = 50
