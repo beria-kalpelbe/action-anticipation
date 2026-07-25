@@ -13,6 +13,15 @@ scripts/train.sh \
   artifacts/rulstm-ek55-rgb
 ```
 
-The `download_data_*` scripts download archived LMDB features into `data/`.
+The `download_data_*` scripts download archived LMDB features into `data/`. By default, they download all modalities (`rgb`, `flow`, `obj`). You can selectively download specific modalities by passing them as arguments:
+
+```bash
+# Download only RGB features
+scripts/download_data_ek55.sh rgb
+
+# Download only RGB and Flow features
+scripts/download_data_ek55.sh rgb flow
+```
+
 The historical model-download scripts were removed: the new Python 3.12 model
 implementations are not compatible with the archived RU-LSTM checkpoints.
