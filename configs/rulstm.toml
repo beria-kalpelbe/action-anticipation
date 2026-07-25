@@ -26,7 +26,7 @@ checkpoint_metric = "top1"
 
 [training.dataloader]
 batch_size = 64
-num_workers = 4
+num_workers = 0
 pin_memory = true
 train_shuffle = true
 validation_shuffle = false
