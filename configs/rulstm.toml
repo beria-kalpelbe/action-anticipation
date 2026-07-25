@@ -1,0 +1,52 @@
+[model]
+name = "rulstm"
+
+[model.kwargs]
+feature_dim = 1024
+num_classes = 2513
+hidden_dim = 1024
+num_layers = 1
+dropout = 0.5
+
+[data]
+sequence_length = 8
+step_seconds = 0.25
+fps = 30
+label = "action"
+frame_template = "frame_{:010d}.jpg"
+lmdb_readahead = false
+subset_size = ""  # Fixed part of dataset to select, empty string defaults to full dataset
+
+[training]
+epochs = 50
+device = "auto"
+supervise_all_horizons = true
+metric_horizon = -1
+checkpoint_metric = "top1"
+
+[training.dataloader]
+batch_size = 64
+num_workers = 4
+pin_memory = true
+train_shuffle = true
+validation_shuffle = false
+
+[training.optimizer]
+name = "adamw"
+
+[training.optimizer.kwargs]
+lr = 0.0003
+weight_decay = 0.0001
+
+[training.loss]
+name = "cross_entropy"
+
+[training.loss.kwargs]
+
+[tracking.wandb]
+enabled = true
+project = "action-anticipation"
+entity = ""
+run_name = "rulstm-ek55-rgb"
+tags = ["rulstm", "ek55", "rgb"]
+mode = "online"

@@ -1,0 +1,31 @@
+[project]
+name = "action-anticipation"
+version = "0.1.0"
+description = "Research framework for egocentric action anticipation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "lmdb>=1.5",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "torch>=2.4",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+vision = ["Pillow>=10", "torchvision>=0.19"]
+tracking = ["wandb>=0.19"]
+
+[project.scripts]
+aa-train = "action_anticipation.cli.train:main"
+aa-evaluate = "action_anticipation.cli.evaluate:main"
+aa-extract-features = "action_anticipation.data.extract_features:main"
+aa-aggregate-detections = "action_anticipation.data.object_features:main"
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,7 @@
+[object_aggregation]
+detections = "/path/to/detections.npy"
+output = "data/my_dataset/obj"
+video_id = "P01_01"
+num_classes = 352
+start_frame = 1
+lmdb_map_size = 1099511627776

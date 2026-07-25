@@ -1,0 +1,11 @@
+.venv/
+.uv-cache/
+.uv-python/
+.pytest_cache/
+artifacts/
+__pycache__/
+*.py[cod]
+*rgb/
+*videos/
+*flows/
+wandb/

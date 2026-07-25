@@ -1,0 +1,9 @@
+[extraction]
+input = "/path/to/frames"
+output = "data/my_dataset/rgb"
+backbone = "resnet50"
+pretrained = true
+batch_size = 64
+pattern = "*.jpg"
+key_mode = "basename"
+lmdb_map_size = 1099511627776
